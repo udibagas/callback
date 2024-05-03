@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "firstName": "Neils",
+    "lastName": "Smeath",
+    "email": "nsmeath0@tuttocitta.it",
+    "gender": "Male"
+  },
+  {
+    "id": 2,
+    "firstName": "Moses",
+    "lastName": "Manvelle",
+    "email": "mmanvelle1@hud.gov",
+    "gender": "Male"
+  },
+  {
+    "id": 3,
+    "firstName": "Rocky",
+    "lastName": "Bish",
+    "email": "rbish2@diigo.com",
+    "gender": "Male"
+  },
+  {
+    "id": 4,
+    "firstName": "Dannie",
+    "lastName": "Matt",
+    "email": "dmatt3@joomla.org",
+    "gender": "Female"
+  },
+  {
+    "id": 5,
+    "firstName": "Myrtice",
+    "lastName": "Apfel",
+    "email": "mapfel4@nymag.com",
+    "gender": "Female"
+  }
+]
