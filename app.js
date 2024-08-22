@@ -1,36 +1,36 @@
-// const genap = numbers.filter((el) => el % 2 == 0);
-// console.log(genap);
+const fs = require("fs");
 
-function filter(numbers, fn) {
-  const result = [];
+// const data = fs.readFileSync("./data/cities.json");
+// console.log(data);
 
-  for (let i = 0; i < numbers.length; i++) {
-    if (fn(numbers[i])) {
-      result.push(numbers[i]);
-    }
+// nested callback
+// callback hell
+fs.readFile("./data/cities.json", "utf-8", (err, data) => {
+  if (err) {
+    console.log(err.message);
+  } else {
+    data = JSON.parse(data);
+    console.log(`1. Selesai baca data cities ${data.length}`);
+    fs.readFile("./data/provinces.json", "utf-8", (err, data) => {
+      if (err) {
+        console.log(err.message);
+      } else {
+        data = JSON.parse(data);
+        console.log(`2. Selesai baca data provinces ${data.length}`);
+        fs.readFile("./data/villages.json", "utf-8", (err, data) => {
+          if (err) {
+            console.log(err.message);
+          } else {
+            data = JSON.parse(data);
+            console.log(`3. Selesai baca data villages ${data.length}`);
+          }
+        });
+      }
+    });
   }
+});
 
-  return result;
+function readFile(path, encoding, cb) {
+  // baca data....
+  cb(err, data);
 }
-
-function map(numbers, callback) {
-  const result = [];
-
-  for (let i = 0; i < numbers.length; i++) {
-    const el = callback(numbers[i]);
-    result.push(el);
-  }
-
-  return result;
-}
-
-const numbers = [1, 2, 3, 4, 5]; // [10, 20, 30, 40, 50]
-const numbers1 = [11, 21, 31, 41, 51];
-// console.log(filterEvenNumber(numbers));
-// console.log(filterOddNumber(numbers));
-const result = filter(numbers, (number) => number % 2 == 0);
-console.log(result);
-
-// console.log(numbers.map((el) => el * 10));
-// console.log(mapKali5(numbers));
-console.log(map(numbers, (number) => number * 2));
